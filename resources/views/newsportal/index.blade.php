@@ -37,7 +37,7 @@
 
   <div class="mySlides">
     <div class="numbertext">6 / 6</div>
-      <img src="img\s4.jpg" style="width:100%">
+      <img src="img\s2.jpg" style="width:100%">
   </div>
 
   <!-- Next and previous buttons -->
@@ -73,7 +73,7 @@
 </div>
 
 
-
+<br>
 
 
 <div class="container">
@@ -153,20 +153,7 @@
 
    <br/>
    <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
-   <br/>
+   
 
                
 @include('newsportal.footer')
