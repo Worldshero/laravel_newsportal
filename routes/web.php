@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+// Route::get('/welcome', function () {
+//     return view('welcome');
+// });
 
 Route::get('/newsportal', function () {
     return view('newsportal.index');
@@ -23,6 +23,14 @@ Route::get('/newsportal/detail', function ()
  {
     return view('newsportal.detail');
 });
+Route::get('/newsportal/course', function ()
+ {
+    return view('newsportal.course');
+});
+
+
+
+Route::resource('course','CourseController');
 
 // Auth::routes();
 

@@ -26,7 +26,7 @@
                   </div>
             </li>
 
-            <li class="dropbtn"> <a >Blog</a> </li>
+            <li class="dropbtn"> <a href="newsportal/course">Blog</a> </li>
             <li></li>
          </ul>
 
