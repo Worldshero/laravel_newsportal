@@ -50,10 +50,13 @@
 .bgc {    
               background-color: #e6f0ff;
               color: white;
-              padding: 7px;
+              padding: 5px;
               font-size: 10px;
               border: none;
               text-align:;
+              a:hover {background-color:  #66a3ff;}
+
+              
             }
 /* social logo style */
 .scs {

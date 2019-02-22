@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse bgc " id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="dropbtn">
-        <a> Home</a>
+        <a href="" > Home</a>
         </li>
  
           <li class="nav-item">
@@ -26,7 +26,7 @@
                   </div>
             </li>
 
-            <li class="dropbtn">Blog </li>
+            <li class="dropbtn"> <a href="">Blog</a> </li>
             <li></li>
          </ul>
 
