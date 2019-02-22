@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\course;
 
 class CourseController extends Controller
 {
@@ -23,7 +24,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('newsportal.course');
     }
 
     /**
@@ -37,13 +38,15 @@ class CourseController extends Controller
         $request->validate([
             'title' => 'required',
             'body' => 'required',
-            'img_url' => 'required',
+            // 'img_url' => 'required',
         ]);
   
-        course::create($request->all());
-   
-        return redirect()->route('newsportal.index')
-                        ->with('success','Product created successfully.');
+        $course=new course;
+     $course->title=$request->title;
+     $course->body=$request->body;
+    //  $course->img_url=$request->img_url;
+     $course->save();
+     return redirect()->back()->with('success', 'Todo has been Created Successfully');
     }
 
     /**

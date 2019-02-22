@@ -14,8 +14,7 @@
 <div class="row">
     <div class="col-md-8">
 
-        <form action=" {{ route('course.store') }}" method="POST">
-                {{ csrf_field() }}
+        <form action=" {{ route('course.create') }}" method="POST">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Title</label>
                   <input type="title" class="form-control" id="title" name="title" placeholder="Enter Course Title">
