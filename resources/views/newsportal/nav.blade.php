@@ -1,6 +1,6 @@
 
 <nav class="navbar fixed-top navbar-light bg-light navbar-expand-md navbar-expand-lg ">
-    <a class="navbar-brand" href="#">Newsportal</a>
+    <a class="navbar-brand" href="../newsportal">Newsportal</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"> </i></span>
     </button>
@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse bgc " id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="dropbtn">
-        <a  > Home</a>
+        <a href="../newsportal" > Home</a>
         </li>
  
           <li class="nav-item">

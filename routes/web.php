@@ -18,6 +18,12 @@ Route::get('/welcome', function () {
 Route::get('/newsportal', function () {
     return view('newsportal.index');
 });
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/newsportal/detail', function ()
+ {
+    return view('newsportal.detail');
+});
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
