@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use App\course;
 
 class CourseController extends Controller
@@ -14,7 +15,11 @@ class CourseController extends Controller
      */
     public function index()
     {
-     return view ('newsportal.index');
+        $courses=DB::table('courses')->get();
+        
+        
+     return view ('newsportal.index')->with ('courses',$courses);;
+
     }
 
     /**
@@ -35,19 +40,57 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'body' => 'required',
-            // 'img_url' => 'required',
-        ]);
+    //     $request->validate([
+    //          'title' => 'required',
+    //          'body' => 'required',
+    //         'img_url' => 'required',
+    //     ]);
   
-        $course=new course;
-     $course->title=$request->title;
-     $course->body=$request->body;
+    //     $course=new course;
+   
     //  $course->img_url=$request->img_url;
+    //  $course->save();
+    //  return redirect()->back()->with('success', 'Todo has been Created Successfully');
+
+
+
+$this->validate($request, [
+        'title' => 'required',
+        'body' => 'required',
+        'img_url' => 'required',
+        'img_url' => 'image|max:1999'
+      ]);
+
+  //save data for title and body
+     $course=new course;
+    $course->title=$request->title;
+     $course->body=$request->body;
+     
+
+
+      // Get filename with extension
+      $filenameWithExt = $request->file('img_url')->getClientOriginalName();
+
+    //   // Get just the filename
+       $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+       
+
+    //   // Get extension
+      $extension = $request->file('img_url')->getClientOriginalExtension();
+
+    //   // Create new filename
+      $filenameToStore = $filename.'_'.time().'.'.$extension;
+
+    //   // Uplaod image
+      $path= $request->file('img_url')->storeAs('public/img', $filenameToStore);
+
+    
+     $course->img_url=$path;
      $course->save();
-     return redirect()->back()->with('success', 'Todo has been Created Successfully');
-    }
+     return redirect ('newsportal/course');
+
+
+     }
 
     /**
      * Display the specified resource.

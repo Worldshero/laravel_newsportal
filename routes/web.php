@@ -15,9 +15,7 @@
 //     return view('welcome');
 // });
 
-Route::get('/newsportal', function () {
-    return view('newsportal.index');
-});
+Route::get('/newsportal', 'CourseController@index');
 
 Route::get('/newsportal/detail', function ()
  {
