@@ -81,7 +81,7 @@
       @foreach ($courses as $course)  
     <div class='col-md-4 col-sm-6'>
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/img/java_1550909303.jpg" alt="Card image cap">
+      <img class="card-img-top" src="storage/img/{{$course->img_url}}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{$course->title}}</h5>
           <p class="card-text">{{$course->body}}</p>
@@ -90,66 +90,11 @@
       </div>
   </div>
   @endforeach
-        {{-- <div class='col-md-4 col-sm-6'>
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="img/javascript.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Javascript</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">See More..</a>
-            </div>
-          </div>
-        </div>
-          
-          <div class='col-md-4 col-sm-6'>
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="img/html.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">HTML</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">See More..</a>
-              </div>
-            </div>
-          </div> --}}
+       
         </div> 
   </div>
 </div>
-<div class="container">
-<div class="row"> 
-    <div class='col-md-4 col-sm-6'>
 
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/html.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Python</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">See More..</a>
-        </div>
-      </div>
-      
-      </div>
-      <div class='col-md-4 col-sm-6'>
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="img/php.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">PHP</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">See More..</a>
-          </div>
-        </div>
-        </div>
-        <div class='col-md-4 col-sm-6'>
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="img/css.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">CSS</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">See More..</a>
-            </div>
-          </div>
-          </div>
-      </div>
-    </div>
     
    <br/>
 

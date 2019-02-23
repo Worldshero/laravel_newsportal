@@ -85,7 +85,7 @@ $this->validate($request, [
       $path= $request->file('img_url')->storeAs('public/img', $filenameToStore);
 
     
-     $course->img_url=$path;
+     $course->img_url=$filenameToStore;
      $course->save();
      return redirect ('newsportal/course');
 
