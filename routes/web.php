@@ -42,6 +42,7 @@ Route::get('/newsportal/detailvalve', function ()
     return view('newsportal.DetailValue');
 
 
+Route::resource('course','CourseController');
 
 
 
