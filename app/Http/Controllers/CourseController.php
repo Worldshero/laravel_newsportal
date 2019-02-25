@@ -29,7 +29,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('newsportal.course');
+        return view('Admin.course');
     }
 
     /**
@@ -87,7 +87,7 @@ $this->validate($request, [
     
      $course->img_url=$filenameToStore;
      $course->save();
-     return redirect ('newsportal/course');
+     return redirect ('/course/create')->with('success', 'Todo has been Created Successfully');
 
 
      }
@@ -135,5 +135,25 @@ $this->validate($request, [
     public function destroy($id)
     {
         //
+    }
+
+
+
+
+// for view detail
+    public function detail()
+    {
+      
+        return view('newsportal.detail');
+       
+    }
+
+
+    // for view detail value entry 
+    public function detailvalue()
+    {
+      
+        return view('Admin.detailvalue');
+       
     }
 }

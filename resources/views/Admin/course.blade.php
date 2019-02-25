@@ -7,10 +7,9 @@
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
+
   
+  <center> <h1>Course detail For Landing page </h1>  </center>
 <div class="container">
 <div class="row">
     <div class="col-md-8">

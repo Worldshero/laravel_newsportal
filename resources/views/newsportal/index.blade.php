@@ -85,7 +85,7 @@
         <div class="card-body">
           <h5 class="card-title">{{$course->title}}</h5>
           <p class="card-text">{{$course->body}}</p>
-          <a href="newsportal/detail" class="btn btn-primary">See More..</a>
+          <a href="http://127.0.0.1:8000/course/detail" class="btn btn-primary">See More..</a>
         </div>
       </div>
   </div>
