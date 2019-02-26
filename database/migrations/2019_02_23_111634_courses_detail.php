@@ -13,11 +13,11 @@ class CoursesDetail extends Migration
      */
     public function up()
     {
-        Schema::create('Details', function (Blueprint $table) {
+        Schema::create('details', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->string('body');
-            $table->string('course_id');
+            $table->integer('course_id');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CoursesDetail extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses');
+        Schema::dropIfExists('details');
     }
 }

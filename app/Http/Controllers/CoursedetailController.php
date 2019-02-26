@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\coursedetail;
-
+use App\Coursedetail;
+use App\course;
+use DB;
 class CoursedetailController extends Controller
 {
     /**
@@ -24,7 +25,10 @@ class CoursedetailController extends Controller
      */
     public function create()
     {
-        return view('Admin.CreateDetailValue');
+       
+        $courses = DB::table('courses')->pluck('title', 'id');
+       
+        return view('Admin.CreateDetailValue',compact('courses'));
     }
 
     /**
@@ -35,7 +39,21 @@ class CoursedetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $this->validate($request, [
+        //     'title' => 'required',
+        //     'body' => 'required',
+        //     // 'course_id'=> 'required',
+        //   ]);
+
+     $coursedet=new Coursedetail;
+    $coursedet->title=$request->title;
+     $coursedet->body=$request->body;
+     $coursedet->course_id=$request->course_id;
+            
+// return $coursedet;
+     $coursedet->save();
+     return  redirect()->route('detailvalue.create');
+
     }
 
     /**
