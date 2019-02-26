@@ -16,8 +16,12 @@ class CoursedetailController extends Controller
      */
     public function index()
     {
+        $crs= DB::table('courses')->pluck('title', 'id');
         $courses=DB::table('details')->get();
-        return view('Admin.HomeDetailValue')->with ('courses',$courses);
+        return view('Admin.HomeDetailValue')->with('courses',$courses)->with('crs',$crs );
+
+
+
     }
 
     /**
@@ -41,11 +45,11 @@ class CoursedetailController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request, [
-        //     'title' => 'required',
-        //     'body' => 'required',
-        //     // 'course_id'=> 'required',
-        //   ]);
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+            'course_id'=> 'required',
+          ]);
     
      $coursedet=new Coursedetail;
      $coursedet->title=$request->title;
@@ -70,11 +74,10 @@ class CoursedetailController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {  
+        $showdetail= Coursedetail::find($id);
 
-        echo $id;
-        exit;
-        // return view('admin.showdetailvalue',compact('course'));
+    return view('admin.showdetailvalue',compact('showdetail'));
     }
 
     /**
@@ -85,7 +88,10 @@ class CoursedetailController extends Controller
      */
     public function edit($id)
     {
-        //
+        $crs = DB::table('courses')->pluck('title', 'id');
+        $editdetail=Coursedetail::find($id);
+
+        return view('admin.editdetailvalue',compact('editdetail'))->with('crs',$crs );
     }
 
     /**
@@ -97,7 +103,18 @@ class CoursedetailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'course_id' => 'required',
+        ]);
+  
+        $editdetail->update($request->all());
+        echo $editdetail;
+        exit;
+  
+    //     return redirect()->route('detailvalue.index')
+    //                     ->with('success','Product updated successfully');
     }
 
     /**

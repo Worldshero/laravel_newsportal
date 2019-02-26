@@ -9,7 +9,7 @@
   <br>
   <br>
   
-  <center><h1>Course Details Submit form </h1> </center>
+  <center><h1>Course Details <i style="color:blue">Submit</i> form </h1> </center>
   <div class="container">
     <div class="row">
         <div class="col-md-8">
