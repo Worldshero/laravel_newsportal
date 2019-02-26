@@ -156,6 +156,22 @@
 .demo:hover {
   opacity: 1;
 }
+/* for overflow text */
+.text {
+    display: block;
+   
+ 
+    height: 50px;
+    margin: 0 auto;
+    line-height: 1.2;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
 
 </style>
 

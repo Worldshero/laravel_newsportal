@@ -18,7 +18,7 @@ class CourseController extends Controller
         $courses=DB::table('courses')->get();
         
         
-     return view ('newsportal.index')->with ('courses',$courses);;
+     return view ('newsportal.index')->with ('courses',$courses);
 
     }
 

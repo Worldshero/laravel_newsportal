@@ -28,7 +28,7 @@
                           <div class="form-group">
                               <label for="sel1">Select Course</label>
                           
-                           {{Form::select('Courses',$courses, null, ['placeholder' => 'select courses','class'=>'form-control'])}}
+                           {{Form::select('course_id',$courses, null, [ 'placeholder' => 'select courses','class'=>'form-control', 'method'=>'get'])}}
 
                             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                    
@@ -36,6 +36,7 @@
         </div>
     </div>
     
+
     
     </div>
 

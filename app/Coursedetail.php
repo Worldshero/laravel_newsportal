@@ -8,4 +8,7 @@ class Coursedetail extends Model
 {
     protected $table = 'details';
 
+
+
+        
 }
