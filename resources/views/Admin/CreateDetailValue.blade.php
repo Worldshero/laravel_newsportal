@@ -7,9 +7,26 @@
   <br>
   <br>
   <br>
-  <br>
   
+  @if ($errors->any())
+  <div class="alert alert-danger">
+      <strong>Whoops!</strong> There were some problems with your input.<br><br>
+      <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+          @endforeach
+      </ul>
+  </div>
+@endif
   <center><h1>Course Details <i style="color:blue">Submit</i> form </h1> </center>
+  <div class="container">
+        <a class="btn btn-info" href="http://127.0.0.1:8000/course/detailvalue"> <i class="fas fa-directions fa-5"></i> Go Back</a>
+
+</div>
+
+
+
+
   <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -17,12 +34,12 @@
             <form action=" {{ route('detailvalue.store') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                      <div class="form-group">
-                      <label for="title">Title</label>
-                      <input type="title" class="form-control" id="title" name="title" placeholder="Enter Course Title" required>
+                      <label for="Sub_cat">Sub_cat</label>
+                      <input type="Sub_cat" class="form-control" id="Sub_cat" name="Sub_cat" placeholder="Enter Course Sub_cat" required>
                       
                       <div class="form-group">
-                            <label for="Body">Body</label>
-                            <textarea class="form-control" rows="5" id="body" name="body" placeholder="Enter Course Body" required></textarea>
+                            <label for="Sub_title">Sub_title</label>
+                            <textarea class="form-control" rows="5" id="Sub_title" name="Sub_title" placeholder="Enter Course Sub_title" required></textarea>
                           </div> 
                             
                           <div class="form-group">
@@ -32,7 +49,7 @@
 
                             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                    
-                  </form>
+                  </form> 
         </div>
     </div>
     

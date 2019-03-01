@@ -15,8 +15,8 @@ class CoursesDetail extends Migration
     {
         Schema::create('details', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('body');
+            $table->string('Sub_cat');
+            $table->string('Sub_title');
             $table->integer('course_id');
             $table->timestamps();
         });

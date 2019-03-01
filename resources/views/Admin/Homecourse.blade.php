@@ -9,7 +9,7 @@
 <br>
 <br>
 <div class="container">
-<a  onclick="return confirm('You want to create new Post ? ')" href="http://127.0.0.1:8000/course/detailvalue/create" class="btn btn-info" >
+<a  onclick="return confirm('You want to create new Post ? ')" href="http://127.0.0.1:8000/course/create" class="btn btn-info" float="right">
   <i class="fas fa-plus"></i> create</a> </div>
 
 <div class="container">
@@ -18,9 +18,9 @@
         <thead >
 
                 <tr><th scope="col" style="width: 5%"><h5> S.No. </h5></th>
-                <th scope="col" style="width: 15%"><h5> Title </h5></th>
+                <th scope="col" style="width: 15%"><h5>Course catgr </h5></th>
                 <th scope="col"  style="width: 25%"><h5> Body </h5></th>
-                <th scope="col"  style="width: 7%"><h5>Course</h5></th>
+                <th scope="col"  style="width: 7%"><h5>Image</h5></th>
                 <th scope="col"  style="width: 16%"><h5>Created</h3></th>
                 <th scope="col"  style="width: 16%"><h5>Updated</h5></th>
                 <th scope="col"  style="width: 14%"><h5> Actions </h5></th>
@@ -29,9 +29,9 @@
                   <tbody>
                       @foreach ($courses as $course) 
                 <tr><td>  {{$loop->index+1}}  </td>
-                <td> {{$course->Sub_cat}}</td>
-                <td class="text"> {{$course->Sub_title}}  </td>
-                <td> {{$course->course_id}} </td>
+                <td>   {{$course->Category}}</td>
+                <td class="text"> {{$course->Cat_title}}  </td>
+                <td> <img class="card-img-top" src="storage/img/{{$course->img_url}}" alt="Card image cap"> </td>
                 <td> {{$course->created_at}}  </td>
                 <td> {{$course->updated_at}}  </td>
                 <td> 
@@ -39,15 +39,15 @@
                
              <div class="row">
                <div class="col-md-4">
-            <a class="btn btn-success" href="{{ route('detailvalue.show',$course->id) }}"><i class="fas fa-eye"></i></a>
+            <a class="btn btn-success" href="{{ route('course.show',$course->id) }}"><i class="fas fa-eye"></i></a>
                </div><div class="col-md-4">
-            <a onclick="return confirm(' Are you sure edit this ? ')" class="btn btn-primary" href="{{ route('detailvalue.edit',$course->id) }}"><i class="fas fa-edit"></i></a> 
+            <a onclick="return confirm(' Are you sure edit this ? ')" class="btn btn-primary" href="{{ route('course.edit',$course->id) }}"><i class="fas fa-edit"></i></a> 
                 </div>
             <div class="col-md-3">
-           <form action="{{ route('detailvalue.destroy', $course->id)}}" method="post">
+           <form action="{{ route('course.destroy', $course->id)}}" method="post">
               @csrf
               @method('DELETE')
-            <button  onclick="return confirm('Are you sure Delete ? ')" class="btn btn-danger" href="{{ route('detailvalue.destroy',$course->id) }}" type="submit"><i class="fa fa-trash"></i></button>
+            <button  onclick="return confirm('Are you sure Delete ? ')" class="btn btn-danger" href="{{ route('course.destroy',$course->id) }}" type="submit"><i class="fa fa-trash"></i></button>
 
                 </form> 
             

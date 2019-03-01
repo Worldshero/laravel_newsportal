@@ -9,7 +9,11 @@
   <br>
 
   
-  <center> <h1>Course detail For Landing page </h1>  </center>
+  <center> <h1>Course detail <i>Create</i> For Landing page </h1>  </center>
+  <div class="container">
+      <a class="btn btn-info" href="http://127.0.0.1:8000/course/"> <i class="fas fa-directions fa-5"></i> Go Back</a>
+
+</div>
 <div class="container">
 <div class="row">
     <div class="col-md-8">
@@ -17,12 +21,12 @@
         <form action=" {{ route('course.store') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                  <div class="form-group">
-                  <label for="exampleInputEmail1">Title</label>
-                  <input type="title" class="form-control" id="title" name="title" placeholder="Enter Course Title" required>
+                  <label for="exampleInputEmail1">Category</label>
+                  <input type="Category" class="form-control" id="Category" name="Category" placeholder="Enter Course Category" required>
                   
                   <div class="form-group">
-                        <label for="Body">Body</label>
-                        <textarea class="form-control" rows="5" id="body" name="body" placeholder="Enter Course Body" required></textarea>
+                        <label for="Cat_title">Cat_title</label>
+                        <textarea class="form-control" rows="5" id="Cat_title" name="Cat_title" placeholder="Enter Course Cat_title" required></textarea>
                       </div> 
                         
                         <div class="form-group">

@@ -7,22 +7,17 @@
 // });
 
 
-// Route::get('/course/detail', function ()
-//  {
-//     return view('newsportal.detail');
-// });
 
 
 
 
 
-
-
- 
+Route::resource('course','CourseController');
+Route::resource('frontend','FrontendController');
 Route::resource('course/detailvalue', 'CoursedetailController');
 
-Route::get('course/detail', 'CourseController@detail');
-Route::resource('course','CourseController');
+Route::get('frontend/det/{id}', 'FrontendController@showFrontend');
+
 
 
 

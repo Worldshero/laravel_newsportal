@@ -83,9 +83,9 @@
       <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="storage/img/{{$course->img_url}}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{$course->title}}</h5>
-          <p class="card-text">{{$course->body}}</p>
-          <a href="http://127.0.0.1:8000/course/detail" class="btn btn-primary">See More..</a>
+          <h5 class="card-title">{{$course->Category}}</h5>
+          <p class="card-text">{{$course->Cat_title}}</p>
+          <a href="{{ route('frontend.show',$course->id) }}"   class="btn btn-primary">See More..</a>
         </div>
       </div>
   </div>

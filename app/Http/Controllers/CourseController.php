@@ -18,7 +18,7 @@ class CourseController extends Controller
         $courses=DB::table('courses')->get();
         
         
-     return view ('newsportal.index')->with ('courses',$courses);
+     return view ('admin.homecourse')->with('courses',$courses);
 
     }
 
@@ -29,7 +29,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('Admin.course');
+        return view('Admin.createcourse');
     }
 
     /**
@@ -40,31 +40,18 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-    //     $request->validate([
-    //          'title' => 'required',
-    //          'body' => 'required',
-    //         'img_url' => 'required',
-    //     ]);
-  
-    //     $course=new course;
    
-    //  $course->img_url=$request->img_url;
-    //  $course->save();
-    //  return redirect()->back()->with('success', 'Todo has been Created Successfully');
-
-
-
-$this->validate($request, [
-        'title' => 'required',
-        'body' => 'required',
+        $this->validate($request, [
+        'Category' => 'required',
+        'Cat_title' => 'required',
         'img_url' => 'required',
         'img_url' => 'image|max:1999'
       ]);
 
   //save data for title and body
      $course=new course;
-    $course->title=$request->title;
-     $course->body=$request->body;
+    $course->Category=$request->Category;
+     $course->Cat_title=$request->Cat_title;
      
 
 
@@ -86,8 +73,9 @@ $this->validate($request, [
 
     
      $course->img_url=$filenameToStore;
+    
      $course->save();
-     return redirect ('/course/create')->with('success', 'Todo has been Created Successfully');
+     return redirect ('course')->with('success', 'Todo has been Created Successfully');
 
 
      }
@@ -100,7 +88,10 @@ $this->validate($request, [
      */
     public function show($id)
     {
-        //
+        $showdetail= course::find($id);
+            
+    
+    return view('admin.showcourse',compact('showdetail'));
     }
 
     /**
@@ -111,7 +102,10 @@ $this->validate($request, [
      */
     public function edit($id)
     {
-        //
+        
+        $updcourse=course::find($id);
+
+        return view('admin.editcourse',compact('updcourse'));
     }
 
     /**
@@ -123,7 +117,37 @@ $this->validate($request, [
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'Category' => 'required',
+            'Cat_title' => 'required',
+            'img_url' => 'required',
+        ]);
+       $updcourse=course::find($id);
+      $updcourse->Cat_title=$request->Cat_title;
+      $updcourse->Category=$request->Category;
+
+            // Get filename with extension
+      $filenameWithExt = $request->file('img_url')->getClientOriginalName();
+      
+     // Get just the filename
+         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+  
+      //   // Get extension
+        $extension = $request->file('img_url')->getClientOriginalExtension();
+  
+      //   // Create new filename
+        $filenameToStore = $filename.'_'.time().'.'.$extension;
+  
+      //   // Uplaod image
+        $path= $request->file('img_url')->storeAs('public/img', $filenameToStore);
+        
+      
+      $updcourse->img_url=$filenameToStore;
+
+     
+      $updcourse->save();
+       return  redirect('course'); 
     }
 
     /**
@@ -134,26 +158,29 @@ $this->validate($request, [
      */
     public function destroy($id)
     {
-        //
+        $deldetail=course::find($id);
+        
+     $deldetail->delete();
+     return  redirect()->route('course.index');
     }
 
 
 
 
 // for view detail
-    public function detail()
-    {
+    // public function detail()
+    // {
       
-        return view('newsportal.detail');
+    //     return view('newsportal.detail');
        
-    }
+    // }
 
 
     // for view detail value entry 
     public function detailvalue()
     {
       
-        return view('Admin.detailvalue');
+      //  return view('Admin.detailvalue');
        
     }
 }

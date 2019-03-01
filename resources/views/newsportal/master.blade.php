@@ -182,7 +182,13 @@
 </head>
 <body>
   
+      
 
+
+
+
+
+  
 {{-- slider image script --}}
 <script>  var slideIndex = 1;
   showSlides(slideIndex);

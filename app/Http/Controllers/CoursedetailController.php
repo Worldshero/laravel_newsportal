@@ -16,10 +16,10 @@ class CoursedetailController extends Controller
      */
     public function index()
     {
-        $crs= DB::table('courses')->pluck('title', 'id');
+        // $crsval= DB::table('courses')->pluck('id', 'Category');
         $courses=DB::table('details')->get();
-        return view('Admin.HomeDetailValue')->with('courses',$courses)->with('crs',$crs );
-
+        return view('Admin.HomeDetailValue')->with('courses',$courses);
+        //->with('crsval',$crsval )
 
 
     }
@@ -32,7 +32,7 @@ class CoursedetailController extends Controller
     public function create()
     {
        
-        $courses = DB::table('courses')->pluck('title', 'id');
+        $courses = DB::table('courses')->pluck('Category', 'id');
        
         return view('Admin.CreateDetailValue',compact('courses'));
     }
@@ -46,19 +46,19 @@ class CoursedetailController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'body' => 'required',
+            'Sub_cat' => 'required',
+            'Sub_title' => 'required',
             'course_id'=> 'required',
           ]);
     
      $coursedet=new Coursedetail;
-     $coursedet->title=$request->title;
-     $coursedet->body=$request->body;
+     $coursedet->Sub_cat=$request->Sub_cat;
+     $coursedet->Sub_title=$request->Sub_title;
      $coursedet->course_id=$request->course_id;
      
     
      $coursedet->save();
-     return  redirect()->route('detailvalue.create');
+     return  redirect()->route('detailvalue.index');
        
 
      
@@ -88,7 +88,7 @@ class CoursedetailController extends Controller
      */
     public function edit($id)
     {
-        $crs = DB::table('courses')->pluck('title', 'id');
+        $crs = DB::table('courses')->pluck('Category', 'id');
         $editdetail=Coursedetail::find($id);
 
         return view('admin.editdetailvalue',compact('editdetail'))->with('crs',$crs );
@@ -104,18 +104,23 @@ class CoursedetailController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required',
-            'body' => 'required',
+            'Sub_cat' => 'required',
+            'Sub_title' => 'required',
             'course_id' => 'required',
         ]);
+        $coursedet=Coursedetail::find($id);
+       $coursedet->Sub_cat=$request->Sub_cat;
+       $coursedet->Sub_title=$request->Sub_title;
+       $coursedet->course_id=$request->course_id;
+       $coursedet->save();
+       return  redirect()->route('detailvalue.index'); 
   
-        $editdetail->update($request->all());
-        echo $editdetail;
-        exit;
+     }
   
-    //     return redirect()->route('detailvalue.index')
-    //                     ->with('success','Product updated successfully');
-    }
+
+  
+       
+   
 
     /**
      * Remove the specified resource from storage.
@@ -125,6 +130,9 @@ class CoursedetailController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deldetail=Coursedetail::find($id);
+        
+     $deldetail->delete();
+     return  redirect()->route('detailvalue.index');
     }
 }

@@ -13,9 +13,22 @@ class Coursedetail extends Model
     // {
     //    return  $this->belongsTo('App\course','course_id');
     // }
-    public function Store()
+//     public function course()
+// {
+//     return $this->hasMany('courses');
+// }
+
+// for upper case in first latter  Sub_title & title   
+    public function setSubtitleAttribute($value)
     {
-    return $this->belongsTo('App\course','course_id');
-    // ->select(array('id','name','mobile','email','min_order','order_before','station_distance','station','opening_time','closing_time','status','marking','backup_restro','irctc_status','email','security_deposit','review_count','address'));
-    } 
+    return $this->attributes['Sub_title']= ucfirst($value);
+    
+    }
+    public function setsubcatAttribute($value)
+    {
+    return $this->attributes['Sub_cat']= ucfirst($value);
+    
+    }
+
+
 }
