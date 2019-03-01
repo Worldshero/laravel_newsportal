@@ -187,7 +187,6 @@
 
 
 
-
   
 {{-- slider image script --}}
 <script>  var slideIndex = 1;

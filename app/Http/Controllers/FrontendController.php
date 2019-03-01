@@ -100,13 +100,13 @@ class FrontendController extends Controller
     public function showFrontend($id)
      {
     
-     $courseDetailsShow=Coursedetail::find($id)->value('Sub_title');
+     $courseDetailsShow=Coursedetail::where('id',$id)->value('Sub_title');
+      $lists=Coursedetail::where('id',$id)->value('Sub_cat');
     
-    
-    //   print_r($courseDetailsShow);
+    //   print_r($lists);
     //   exit;
 
-     return view('newsportal.detailcontainer',compact('courseDetailsShow'));
+     return view('newsportal.detailcontainer',compact('courseDetailsShow' ,'lists'));
       }
 
 

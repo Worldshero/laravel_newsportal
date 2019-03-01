@@ -19,9 +19,7 @@ class CoursedetailController extends Controller
         // $crsval= DB::table('courses')->pluck('id', 'Category');
         $courses=DB::table('details')->get();
         return view('Admin.HomeDetailValue')->with('courses',$courses);
-        //->with('crsval',$crsval )
-
-
+        //->with('crsval',$crsval );
     }
 
     /**

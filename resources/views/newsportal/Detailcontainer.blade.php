@@ -15,10 +15,14 @@
 <div class="col-md-4 col-lg-4 col-sm-4">
     <div class="card" style="width: 18rem;">
             <ul class="list-group list-group-flush">
-              @foreach ($courseDetailsShow as $item)
-              <li class="list-group-item"> <a  href="{{'/frontend/det/'.$item->id}}">{{$item->Sub_cat}}</a></li>      
-              @endforeach
-            <li>detail page by id dynamic</li>
+              
+              <li class="list-group-item"> <a  href="">Static menu </a></li> 
+              <li class="list-group-item"> <a  href="">Static menu </a></li>  
+              <li class="list-group-item"> <a  href="">Static menu </a></li>  
+              <li class="list-group-item"> <a  href="">Static menu </a></li>  
+              <li class="list-group-item"> <a  href="">Static menu </a></li>  
+              <li class="list-group-item"> <a  href="">Static menu </a></li>       
+        
             </ul>
           </div>
 </div>

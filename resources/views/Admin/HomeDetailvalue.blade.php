@@ -29,7 +29,7 @@
                   <tbody>
                       @foreach ($courses as $course) 
                 <tr><td>  {{$loop->index+1}}  </td>
-                <td> {{$course->Sub_cat}}</td>
+                <td>   {{$course->Sub_cat}}</td>
                 <td class="text"> {{$course->Sub_title}}  </td>
                 <td> {{$course->course_id}} </td>
                 <td> {{$course->created_at}}  </td>
