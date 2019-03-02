@@ -23,7 +23,7 @@ class FrontendController extends Controller
 // echo $results;
 // exit;
         
-        return view ('newsportal.index')->with('courses',$courses);
+        return view ('newsportal.indexx')->with('courses',$courses);
     }
 
     /**

@@ -31,7 +31,7 @@
     <div class="row">
         <div class="col-md-8">
     
-            <form action=" {{ route('detailvalue.store') }}" method="POST" enctype="multipart/form-data">
+            <form action=" {{ route('detailvalue.store') }}" method="POST" enctype="multipart/form-data" onsubmit="createTextSnippet();" >
                     {{ csrf_field() }}
                      <div class="form-group">
                       <label for="Sub_cat">Sub_cat</label>
@@ -39,7 +39,7 @@
                       
                       <div class="form-group">
                             <label for="Sub_title">Sub_title</label>
-                            <textarea class="form-control" rows="5" id="Sub_title" name="Sub_title" placeholder="Enter Course Sub_title" required></textarea>
+                            <textarea  id="summary-ckeditor "  name="Sub_title"  class="form-control" placeholder="Enter Course Sub_title" required></textarea>
                           </div> 
                             
                           <div class="form-group">

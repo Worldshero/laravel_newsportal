@@ -28,3 +28,11 @@ Route::get('frontend/det/{id}', 'FrontendController@showFrontend');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

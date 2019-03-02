@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CoursesDetail extends Migration
+class CreateSliderEntitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,13 @@ class CoursesDetail extends Migration
      * @return void
      */
     public function up()
-    {
-        
-        Schema::create('details', function (Blueprint $table) {
+    {   Schema::defaultStringLength(191); //NEW: Increase StringLength
+        Schema::create('slider_entities', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Sub_cat');
-            $table->string('Sub_title');
-            $table->integer('course_id');
             $table->timestamps();
+            $table->integer('entity_id')->unsigned();
+            $table->string('entity_type');
+            $table->integer('slider_id')->unsigned();
         });
     }
 
@@ -30,6 +29,6 @@ class CoursesDetail extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('details');
+        Schema::dropIfExists('external_sliders');
     }
 }
