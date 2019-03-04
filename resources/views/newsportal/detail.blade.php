@@ -1,13 +1,8 @@
 @extends('newsportal.master')
         <div>
             @include('newsportal.nav')
-        </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="container">
+        </div>         
+            <div class="container" style="margin-top:80px">
               <div class="row">
                           <div class="col-md-4 col-lg-4 col-sm-4">
                             <div class="card" style="width: 18rem;">

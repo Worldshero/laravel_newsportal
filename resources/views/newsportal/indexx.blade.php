@@ -1,11 +1,9 @@
 @extends('newsportal.master')
-     <div>
+     <div class="container" style="margin-top:50px">
          <div>
               @include('newsportal.nav')
-                 </div>
-                       <br>
-                           <br>
-                                <div id="demo" class="carousel slide" data-ride="carousel">
+                         </div>                       
+                                <div id="demo" class="carousel slide" data-ride="carousel"  >
                                     <ul class="carousel-indicators">
                                       <li data-target="#demo" data-slide-to="0" class="active"></li>
                                       <li data-target="#demo" data-slide-to="1"></li>
@@ -59,9 +57,7 @@
                                           </div> 
                                            </div>
                                         </div>  
-                                     <br/>
-                                   <br/>
-                                <br/>              
+                                                   
           @include('newsportal.footer')
 
 
