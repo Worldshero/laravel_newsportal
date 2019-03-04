@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Coursedetail;
 use App\course;
-
+use App\Slider;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -16,13 +16,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
-       
-        $courses=DB::table('courses')->get();
-        
-        // $results = Coursedetail::with('crsjoin')->get();
-// echo $results;
-// exit;
-        
+        $courses=DB::table('courses')->get(); 
         return view ('newsportal.indexx')->with('courses',$courses);
     }
 
@@ -55,14 +49,10 @@ class FrontendController extends Controller
      */
     public function show($id)
     {
-   
     $courseDetails=Coursedetail::where('course_id',$id)->get();
-    
     return view('newsportal.detail',compact('courseDetails'));
      }
       
-    
-     
     /**
      * Show the form for editing the specified resource.
      *
@@ -103,11 +93,29 @@ class FrontendController extends Controller
      $courseDetailsShow=Coursedetail::where('id',$id)->value('Sub_title');
       $lists=Coursedetail::where('id',$id)->value('Sub_cat');
     
-    //   print_r($lists);
-    //   exit;
+   
 
      return view('newsportal.detailcontainer',compact('courseDetailsShow' ,'lists'));
       }
+
+
+      public function SliderFrontend()
+      {
+        $sliders = Slider::orderby('id', 'desc')->paginate(10);
+        return view('newsportal.indexx', compact('sliders'));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -163,7 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Unisharp\Ckeditor\ServiceProvider::class,
-        Webelightdev\LaravelSlider\ImageSliderServiceProvider::class,
+       
         /*
          * Package Service Providers...
          */

@@ -2,9 +2,9 @@
 
 
 
-// Route::get('/welcome', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 
@@ -19,8 +19,7 @@ Route::get('frontend/det/{id}', 'FrontendController@showFrontend');
 
 
 
-
-
+Route::resource('slides', 'SliderController');
 
 
 
@@ -33,6 +32,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
