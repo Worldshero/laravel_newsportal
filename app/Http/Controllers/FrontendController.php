@@ -16,7 +16,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        $courses=DB::table('courses')->get(); 
+        $courses=DB::table('courses')->get();
         return view ('newsportal.indexx')->with('courses',$courses);
     }
 
@@ -27,7 +27,7 @@ class FrontendController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -52,7 +52,7 @@ class FrontendController extends Controller
     $courseDetails=Coursedetail::where('course_id',$id)->get();
     return view('newsportal.detail',compact('courseDetails'));
      }
-      
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -86,37 +86,5 @@ class FrontendController extends Controller
     {
         //
     }
-
-    public function showFrontend($id)
-     {
-    
-     $courseDetailsShow=Coursedetail::where('id',$id)->value('Sub_title');
-      $lists=Coursedetail::where('id',$id)->value('Sub_cat');
-    
-   
-
-     return view('newsportal.detailcontainer',compact('courseDetailsShow' ,'lists'));
-      }
-
-
-      public function SliderFrontend()
-      {
-        $sliders = Slider::orderby('id', 'desc')->paginate(10);
-        return view('newsportal.indexx', compact('sliders'));
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

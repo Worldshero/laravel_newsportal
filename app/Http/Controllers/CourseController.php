@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use DB;
 use App\course;
+use DB;
+use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
@@ -15,10 +15,9 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses=DB::table('courses')->get();
-        
-        
-     return view ('admin.homecourse')->with('courses',$courses);
+        $courses = DB::table('courses')->get();
+
+        return view('admin.homecourse')->with('courses', $courses);
 
     }
 
@@ -40,45 +39,40 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-   
+
         $this->validate($request, [
-        'Category' => 'required',
-        'Cat_title' => 'required',
-        'img_url' => 'required',
-        'img_url' => 'image|max:1999'
-      ]);
+            'Category' => 'required',
+            'Cat_title' => 'required',
+            'img_url' => 'required',
+            'img_url' => 'image|max:1999',
+        ]);
 
-  //save data for title and body
-     $course=new course;
-    $course->Category=$request->Category;
-     $course->Cat_title=$request->Cat_title;
-     
+        //save data for title and body
+        $course = new course;
+        $course->Category = $request->Category;
+        $course->Cat_title = $request->Cat_title;
 
+        // Get filename with extension
+        $filenameWithExt = $request->file('img_url')->getClientOriginalName();
 
-      // Get filename with extension
-      $filenameWithExt = $request->file('img_url')->getClientOriginalName();
+        //   // Get just the filename
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 
-    //   // Get just the filename
-       $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-       
+        //   // Get extension
+        $extension = $request->file('img_url')->getClientOriginalExtension();
 
-    //   // Get extension
-      $extension = $request->file('img_url')->getClientOriginalExtension();
+        //   // Create new filename
+        $filenameToStore = $filename . '_' . time() . '.' . $extension;
 
-    //   // Create new filename
-      $filenameToStore = $filename.'_'.time().'.'.$extension;
+        //   // Uplaod image
+        $path = $request->file('img_url')->storeAs('public/img', $filenameToStore);
 
-    //   // Uplaod image
-      $path= $request->file('img_url')->storeAs('public/img', $filenameToStore);
+        $course->img_url = $filenameToStore;
 
-    
-     $course->img_url=$filenameToStore;
-    
-     $course->save();
-     return redirect ('course')->with('success', 'Todo has been Created Successfully');
+        $course->save();
+        return redirect('course')->with('success', 'Todo has been Created Successfully');
 
-
-     }
+    }
 
     /**
      * Display the specified resource.
@@ -88,10 +82,9 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        $showdetail= course::find($id);
-            
-    
-    return view('admin.showcourse',compact('showdetail'));
+        $showdetail = course::find($id);
+
+        return view('admin.showcourse', compact('showdetail'));
     }
 
     /**
@@ -102,10 +95,10 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        
-        $updcourse=course::find($id);
 
-        return view('admin.editcourse',compact('updcourse'));
+        $updcourse = course::find($id);
+
+        return view('admin.editcourse', compact('updcourse'));
     }
 
     /**
@@ -122,32 +115,29 @@ class CourseController extends Controller
             'Cat_title' => 'required',
             'img_url' => 'required',
         ]);
-       $updcourse=course::find($id);
-      $updcourse->Cat_title=$request->Cat_title;
-      $updcourse->Category=$request->Category;
+        $updcourse = course::find($id);
+        $updcourse->Cat_title = $request->Cat_title;
+        $updcourse->Category = $request->Category;
 
-            // Get filename with extension
-      $filenameWithExt = $request->file('img_url')->getClientOriginalName();
-      
-     // Get just the filename
-         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        // Get filename with extension
+        $filenameWithExt = $request->file('img_url')->getClientOriginalName();
 
-  
-      //   // Get extension
+        // Get just the filename
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+        //   // Get extension
         $extension = $request->file('img_url')->getClientOriginalExtension();
-  
-      //   // Create new filename
-        $filenameToStore = $filename.'_'.time().'.'.$extension;
-  
-      //   // Uplaod image
-        $path= $request->file('img_url')->storeAs('public/img', $filenameToStore);
-        
-      
-      $updcourse->img_url=$filenameToStore;
 
-     
-      $updcourse->save();
-       return  redirect('course'); 
+        //   // Create new filename
+        $filenameToStore = $filename . '_' . time() . '.' . $extension;
+
+        //   // Uplaod image
+        $path = $request->file('img_url')->storeAs('public/img', $filenameToStore);
+
+        $updcourse->img_url = $filenameToStore;
+
+        $updcourse->save();
+        return redirect('course');
     }
 
     /**
@@ -158,29 +148,25 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        $deldetail=course::find($id);
-        
-     $deldetail->delete();
-     return  redirect()->route('course.index');
+        $deldetail = course::find($id);
+
+        $deldetail->delete();
+        return redirect()->route('course.index');
     }
-
-
-
 
 // for view detail
     // public function detail()
     // {
-      
+
     //     return view('newsportal.detail');
-       
+
     // }
 
-
-    // for view detail value entry 
+    // for view detail value entry
     public function detailvalue()
     {
-      
-      //  return view('Admin.detailvalue');
-       
+
+        //  return view('Admin.detailvalue');
+
     }
 }
