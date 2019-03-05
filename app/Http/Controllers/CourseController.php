@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use App\course;
 use DB;
 use Illuminate\Http\Request;
@@ -41,7 +41,7 @@ class CourseController extends Controller
     {
 
         $this->validate($request, [
-            'Category' => 'required',
+            'Category' => 'required|unique:courses',
             'Cat_title' => 'required',
             'img_url' => 'required',
             'img_url' => 'image|max:1999',
@@ -111,7 +111,7 @@ class CourseController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'Category' => 'required',
+            'Category' => 'required|unique:courses',
             'Cat_title' => 'required',
             'img_url' => 'required',
         ]);

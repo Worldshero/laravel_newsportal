@@ -27,21 +27,22 @@
                       </tr>
                     </thead>
                   <tbody>
-                      @foreach ($courses as $course) 
+
+                      @foreach ($courses as $course)
                 <tr><td>  {{$loop->index+1}}  </td>
                 <td>   {{$course->Category}}</td>
                 <td class="text"> {{$course->Cat_title}}  </td>
                 <td> <img class="card-img-top" src="storage/img/{{$course->img_url}}" alt="Card image cap"> </td>
                 <td> {{$course->created_at}}  </td>
                 <td> {{$course->updated_at}}  </td>
-                <td> 
-                  
-               
+                <td>
+
+
              <div class="row">
                <div class="col-md-4">
             <a class="btn btn-success" href="{{ route('course.show',$course->id) }}"><i class="fas fa-eye"></i></a>
                </div><div class="col-md-4">
-            <a onclick="return confirm(' Are you sure edit this ? ')" class="btn btn-primary" href="{{ route('course.edit',$course->id) }}"><i class="fas fa-edit"></i></a> 
+            <a onclick="return confirm(' Are you sure edit this ? ')" class="btn btn-primary" href="{{ route('course.edit',$course->id) }}"><i class="fas fa-edit"></i></a>
                 </div>
             <div class="col-md-3">
            <form action="{{ route('course.destroy', $course->id)}}" method="post">
@@ -49,8 +50,8 @@
               @method('DELETE')
             <button  onclick="return confirm('Are you sure Delete ? ')" class="btn btn-danger" href="{{ route('course.destroy',$course->id) }}" type="submit"><i class="fa fa-trash"></i></button>
 
-                </form> 
-            
+                </form>
+
              </div>
                </div>
              </td>

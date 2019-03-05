@@ -29,9 +29,9 @@ class CoursedetailController extends Controller
      */
     public function create()
     {
-       
+
         $courses = DB::table('courses')->pluck('Category', 'id');
-       
+
         return view('Admin.CreateDetailValue',compact('courses'));
     }
 
@@ -44,25 +44,25 @@ class CoursedetailController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'Sub_cat' => 'required',
+            'Sub_cat' => 'required|unique:details',
             'Sub_title' => 'required',
             'course_id'=> 'required',
           ]);
-    
+
      $coursedet=new Coursedetail;
      $coursedet->Sub_cat=$request->Sub_cat;
      $coursedet->Sub_title=$request->Sub_title;
      $coursedet->course_id=$request->course_id;
-     
-    
+
+
      $coursedet->save();
      return  redirect()->route('detailvalue.index');
-       
 
-     
+
+
     }
 
-    
+
 
 
     /**
@@ -72,7 +72,7 @@ class CoursedetailController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {  
+    {
         $showdetail= Coursedetail::find($id);
 
     return view('admin.showdetailvalue',compact('showdetail'));
@@ -102,7 +102,7 @@ class CoursedetailController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'Sub_cat' => 'required',
+            'Sub_cat' => 'required|unique:details',
             'Sub_title' => 'required',
             'course_id' => 'required',
         ]);
@@ -111,14 +111,14 @@ class CoursedetailController extends Controller
        $coursedet->Sub_title=$request->Sub_title;
        $coursedet->course_id=$request->course_id;
        $coursedet->save();
-       return  redirect()->route('detailvalue.index'); 
-  
-     }
-  
+       return  redirect()->route('detailvalue.index');
 
-  
-       
-   
+     }
+
+
+
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -129,7 +129,7 @@ class CoursedetailController extends Controller
     public function destroy($id)
     {
         $deldetail=Coursedetail::find($id);
-        
+
      $deldetail->delete();
      return  redirect()->route('detailvalue.index');
     }
