@@ -13,7 +13,13 @@ class UserDetails extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('Name');
+            $table->string('Email');
+            $table->integer('password');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,7 @@ class UserDetails extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('users');
+
     }
 }

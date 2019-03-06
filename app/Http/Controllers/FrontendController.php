@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Coursedetail;
 use App\course;
-use App\Slider;
+use App\User;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -18,6 +18,7 @@ class FrontendController extends Controller
     {
         $courses=DB::table('courses')->get();
         return view ('newsportal.indexx')->with('courses',$courses);
+
     }
 
     /**

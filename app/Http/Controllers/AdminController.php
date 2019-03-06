@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
 class AdminController extends Controller
 {
     /**
@@ -16,11 +16,21 @@ class AdminController extends Controller
        return view('Admin.login_register');
     }
 
-    public function signup()
-    {
-       return view('Admin.signup');
-    }
+    public function register(Request $request){
+        $this->validate($request,[
+           'name'=>'required|string|max:255',
+            'email'=>'required|string|email|unique:users,email',
+            'password'=>'required|min:6|confirmed',
+        ]);
 
+
+        $input_data=$request->all();
+        $input_data['password']=Hash::make($input_data['password']);
+        User::create($input_data);
+        return back()->with('message','Registration Done!');
+
+
+        }
 
 
 

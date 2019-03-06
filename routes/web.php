@@ -15,7 +15,12 @@ Route::resource('course/detailvalue', 'CoursedetailController');
 Route::resource('course','CourseController');
 Route::resource('frontend','FrontendController');
 
-Route::resource('frontend/admin/home','AdminController');
+Route::get('/register', 'RegistrationController@create');
+Route::post('register', 'RegistrationController@store');
+
+Route::get('/login', 'SessionsController@create');
+Route::post('/login', 'SessionsController@store');
+Route::get('/logout', 'SessionsController@destroy');
 
 
 
@@ -27,7 +32,12 @@ Route::resource('frontend/admin/home','AdminController');
 
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
