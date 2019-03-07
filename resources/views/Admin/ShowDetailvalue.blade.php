@@ -1,8 +1,12 @@
-@extends('newsportal.master')
-@include('newsportal.nav')
+@extends('Admin.adminmaster')
+
+
+
+        @include('Admin.adminnav')
+
 <div class="container" style="margin-top:80px">
              <a class="btn btn-info" href="http://127.0.0.1:8000/course/detailvalue"> <i class="fas fa-directions fa-5"></i> Go Back</a>
-               </div>  
+               </div>
               <div class="container">
                    <div class="row">
                          <div class="col-xs-12 col-sm-12 col-md-12"><h3>{{$showdetail->Sub_cat}} </h3></div>

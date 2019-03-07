@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<title>Sign up facundo farm & resort</title>
+	<title>Sign up </title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,9 +45,9 @@
 							<div class="form-group">
 								<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" required>
 							</div>
-								{{-- <div class="form-group">
-								<input type="password" name="password2" id="password2" class="form-control input-lg" placeholder="Password2" required>
-							</div> --}}
+								<div class="form-group">
+								<input type="password" name="password2" id="password2" class="form-control input-lg" placeholder="Confirm Password" required>
+							</div>
 							<div class="form-check">
 								<label class="form-check-label">
 								  <input type="checkbox" class="form-check-input">
@@ -56,7 +56,7 @@
 							  </div>
  							<div>
                                  <br>
-                                       <input type="submit" href="#" class="btn btn-md btn-primary "  value="Signup">
+                                       <input type="submit" href="#" class="btn btn-md btn-primary "  value="Signup" style="cursor:pointer">
                                        <a  href="http://127.0.0.1:8000/login" class="btn btn-md btn-info offset-md-2" >login <i class="fas fa-sign-in-alt"></i></a>
  							</div>
 						</fieldset>

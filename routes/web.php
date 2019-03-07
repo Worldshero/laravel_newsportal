@@ -8,12 +8,15 @@ Route::get('/', function () {
 
 
 
+Route::group(['middleware' => ['auth:web']], function () {
 
-
-
-Route::resource('course/detailvalue', 'CoursedetailController');
+    Route::resource('course/detailvalue', 'CoursedetailController');
 Route::resource('course','CourseController');
-Route::resource('frontend','FrontendController');
+});
+
+
+
+Route::resource('frontend','FrontendController')->middleware('User');
 
 Route::get('/register', 'RegistrationController@create');
 Route::post('register', 'RegistrationController@store');

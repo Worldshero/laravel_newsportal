@@ -1,5 +1,9 @@
-@extends('newsportal.master')
- @include('newsportal.nav')
+@extends('admin.adminmaster')
+
+
+<div>
+        @include('Admin.adminnav')
+  </div>
  <br>
   <br>
   <br>

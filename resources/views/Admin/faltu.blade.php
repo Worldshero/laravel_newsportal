@@ -5,20 +5,18 @@
 
 
                      <div class="container">
-
-                            <div class="container">
-                                    <a  onclick="return confirm('You want to create new Post ? ')" href="http://127.0.0.1:8000/course/create" class="btn btn-info" >
-                                      <i class="fas fa-plus"></i> create</a> </div>
-
+                         <div class="row">
+                            <div class="col-md-7" >@include('Admin.sidebar')</div>
+                            <div class="col-md-1">
                              <table class="table table-bordered">
                                  <thead >
                                         <tr><th scope="col" style="width: 5%"><h5> S.No. </h5></th>
-                                        <th scope="col" style="width: 13%"><h5>Course catgr </h5></th>
+                                        <th scope="col" style="width: 15%"><h5>Course catgr </h5></th>
                                         <th scope="col"  style="width: 25%"><h5> Body </h5></th>
                                         <th scope="col"  style="width: 7%"><h5>Image</h5></th>
                                         <th scope="col"  style="width: 16%"><h5>Created</h5></th>
                                         <th scope="col"  style="width: 16%"><h5>Updated</h5></th>
-                                        <th scope="col"  style="width: 18%"><h5> Actions </h5></th>
+                                        <th scope="col"  style="width: 14%"><h5> Actions </h5></th>
                                         </tr>
                                  </thead>
                                     <tbody>
@@ -50,8 +48,8 @@
                                              @endforeach
                                          </tbody>
                                    </table>
-
-
+                              </div>
+                         </div>
                      </div>
 @include('newsportal.footer')
 

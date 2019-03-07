@@ -1,8 +1,8 @@
-@extends('newsportal.master')
+@extends('admin.adminmaster')
 <div>
 
 <div>
-        @include('newsportal.nav')
+        @include('admin.adminnav')
   </div>
 <br>
 <br>
@@ -13,7 +13,7 @@
              <a class="btn btn-info" href="http://127.0.0.1:8000/course"> <i class="fas fa-directions fa-5"></i> Go Back</a>
 
 </div>
-    
+
 <div class="container">
         <div class="row">
 

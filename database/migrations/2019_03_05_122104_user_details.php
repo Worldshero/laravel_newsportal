@@ -17,6 +17,7 @@ class UserDetails extends Migration
             $table->increments('id');
             $table->string('Name');
             $table->string('Email');
+            $table->integer('remember_token')->nullable();
             $table->integer('password');
             $table->timestamps();
         });

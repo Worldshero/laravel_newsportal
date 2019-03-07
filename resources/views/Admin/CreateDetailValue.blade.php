@@ -1,13 +1,13 @@
-@extends('newsportal.master')
+@extends('admin.adminmaster')
 
 <div>
 <div>
-        @include('newsportal.nav')
+        @include('admin.adminnav')
   </div>
   <br>
   <br>
   <br>
-  
+
   @if ($errors->any())
   <div class="alert alert-danger">
       <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -30,31 +30,31 @@
   <div class="container">
     <div class="row">
         <div class="col-md-8">
-    
+
             <form action=" {{ route('detailvalue.store') }}" method="POST" enctype="multipart/form-data" onsubmit="createTextSnippet();" >
                     {{ csrf_field() }}
                      <div class="form-group">
                       <label for="Sub_cat">Sub_cat</label>
                       <input type="Sub_cat" class="form-control" id="Sub_cat" name="Sub_cat" placeholder="Enter Course Sub_cat" required>
-                      
+
                       <div class="form-group">
                             <label for="Sub_title">Sub_title</label>
                             <textarea  id="summary-ckeditor "  name="Sub_title"  class="form-control" placeholder="Enter Course Sub_title" required></textarea>
-                          </div> 
-                            
+                          </div>
+
                           <div class="form-group">
                               <label for="sel1">Select Course</label>
-                          
+
                            {{Form::select('course_id',$courses, null, [ 'placeholder' => 'select courses','class'=>'form-control', 'method'=>'get'])}}
 
                             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                   
-                  </form> 
+
+                  </form>
         </div>
     </div>
-    
 
-    
+
+
     </div>
 
 

@@ -18,7 +18,8 @@ public function store()
     $this->validate(request(), [
         'name' => 'required',
         'email' => 'required|email|unique:users',
-        'password' => 'required'
+        'password' => 'required',
+        'password2'=>'required'
     ]);
 
     $user = User::create(request(['name', 'email', 'password']));
