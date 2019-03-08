@@ -8,11 +8,11 @@ Route::get('/', function () {
 
 
 
-Route::group(['middleware' => ['auth:web']], function () {
+// Route::group(['middleware' => ['auth:web']], function () {});
 
     Route::resource('course/detailvalue', 'CoursedetailController');
 Route::resource('course','CourseController');
-});
+
 
 
 
@@ -25,22 +25,3 @@ Route::get('/login', 'SessionsController@create');
 Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy');
 
-
-
-
-
-
-
-
-
-
-
-
-
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');

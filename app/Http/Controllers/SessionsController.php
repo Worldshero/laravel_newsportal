@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class SessionsController extends Controller
@@ -11,22 +12,22 @@ class SessionsController extends Controller
         return view('admin.login');
     }
 
-    public function store()
+    public function store(Request $request)
+
     {
-        if (auth()->attempt(request(['Email', 'password'])) == false) {
-            return back()->withErrors([
-                'message' => 'The email or  password is incorrect, please try again'
-            ]);
-        }
+       $this->Validate($request,[
+           'email'=>'required|email',
+           'password'=>'required',
 
-        return redirect()->to('/course');
+       ]);
+
+       if (Auth::attempt(['email'=>$request->email,'password'=>$request->password])) {
+           return redirect ('course');
+       }
+       else {
+          return redirect ('login');
+       }
     }
-
-
-
-
-
-
 
     public function destroy()
     {

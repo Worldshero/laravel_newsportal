@@ -26,7 +26,7 @@ public function store()
 
     auth()->login($user);
 
-    return redirect()->to('/login')->with('Success','Now you can login with your email and password');
+    return redirect()->to('/login')->with('success','Now you can login with your email and password');
 }
 
 
