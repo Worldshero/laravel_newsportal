@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class Coursedetail extends Model
@@ -18,16 +18,16 @@ class Coursedetail extends Model
 //     return $this->hasMany('courses');
 // }
 
-// for upper case in first latter  Sub_title & title   
+// for upper case in first latter  Sub_title & title
     public function setSubtitleAttribute($value)
     {
     return $this->attributes['Sub_title']= ucfirst($value);
-    
+
     }
     public function setsubcatAttribute($value)
     {
     return $this->attributes['Sub_cat']= ucfirst($value);
-    
+
     }
 
 

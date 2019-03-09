@@ -6,17 +6,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+ Route::auth();
 
-
-// Route::group(['middleware' => ['auth:web']], function () {});
-
+Route::group(['middleware'=>['User:web']],function (){
     Route::resource('course/detailvalue', 'CoursedetailController');
-Route::resource('course','CourseController');
+    Route::resource('course','CourseController');
+
+});
 
 
-
-
-Route::resource('frontend','FrontendController')->middleware('User');
+Route::resource('frontend','FrontendController');
 
 Route::get('/register', 'RegistrationController@create');
 Route::post('register', 'RegistrationController@store');

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class SessionsController extends Controller
@@ -12,28 +13,22 @@ class SessionsController extends Controller
         return view('admin.login');
     }
 
-    public function store(Request $request)
-
-    {
-       $this->Validate($request,[
-           'email'=>'required|email',
-           'password'=>'required',
-
-       ]);
-
-       if (Auth::attempt(['email'=>$request->email,'password'=>$request->password])) {
-           return redirect ('course');
-       }
-       else {
-          return redirect ('login');
+    public function store(Request $request){
+       $input_data=$request->all();
+       if(Auth::attempt(['email'=>$input_data['email'],'password'=>$input_data['password']])){
+           Session::put('frontSession',$input_data['email']);
+           return redirect('course');
+              }
+          else{
+           return back()->with('message','Account is not Valid!');
        }
     }
 
     public function destroy()
     {
-        auth()->logout();
-
-        return redirect()->to('/login');
+        Auth::logout();
+        Session::forget('frontSession');
+        return redirect()->to('/login')->with('message','you are Logout!');
     }
 
 
