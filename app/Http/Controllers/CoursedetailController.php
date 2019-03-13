@@ -18,7 +18,7 @@ class CoursedetailController extends Controller
     {
         // $crsval= DB::table('courses')->pluck('id', 'Category');
         $courses=DB::table('details')->get();
-        return view('Admin.HomeDetailValue')->with('courses',$courses);
+        return view('Admin.Coursedetail.HomeDetailValue')->with('courses',$courses);
         //->with('crsval',$crsval );
     }
 
@@ -32,7 +32,7 @@ class CoursedetailController extends Controller
 
         $courses = DB::table('courses')->pluck('Category', 'id');
 
-        return view('Admin.CreateDetailValue',compact('courses'));
+        return view('Admin.Coursedetail.CreateDetailValue',compact('courses'));
     }
 
     /**
@@ -75,7 +75,7 @@ class CoursedetailController extends Controller
     {
         $showdetail= Coursedetail::find($id);
 
-    return view('admin.showdetailvalue',compact('showdetail'));
+    return view('Admin.Coursedetail.showDetailValue',compact('showdetail'));
     }
 
     /**
@@ -89,7 +89,7 @@ class CoursedetailController extends Controller
         $crs = DB::table('courses')->pluck('Category', 'id');
         $editdetail=Coursedetail::find($id);
 
-        return view('admin.editdetailvalue',compact('editdetail'))->with('crs',$crs );
+        return view('admin.coursedetail.editdetailvalue',compact('editdetail'))->with('crs',$crs );
     }
 
     /**

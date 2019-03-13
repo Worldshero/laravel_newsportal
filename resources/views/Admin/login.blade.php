@@ -20,7 +20,7 @@
                                 {{ csrf_field() }}
                                   <fieldset>
                           <div class="form-group">
-                           <input type="email" name="email" id="email" value=" {{old('email')}}" class="form-control input-lg" placeholder="Email" required>
+                           <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email" required>
                           </div>
                           <div class="form-group">
               <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" required>

@@ -1,5 +1,6 @@
 
-$(document).ready(function(){
+$(document).ready(function()
+{
   $(".CourseDetails").click(function(){
    var id = $(this).attr("data-id");
    var html="";

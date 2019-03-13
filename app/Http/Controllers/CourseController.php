@@ -24,7 +24,7 @@ class CourseController extends Controller
     {
         $courses = DB::table('courses')->get();
 
-        return view('admin.homecourse')->with('courses', $courses);
+        return view('Admin.course.homecourse')->with('courses', $courses);
 
     }
 
@@ -35,7 +35,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('Admin.createcourse');
+        return view('Admin.course.createcourse');
     }
 
     /**
@@ -91,7 +91,7 @@ class CourseController extends Controller
     {
         $showdetail = course::find($id);
 
-        return view('admin.showcourse', compact('showdetail'));
+        return view('admin.course.Showcourse', compact('showdetail'));
     }
 
     /**
@@ -105,7 +105,7 @@ class CourseController extends Controller
 
         $updcourse = course::find($id);
 
-        return view('admin.editcourse', compact('updcourse'));
+        return view('admin.course.editcourse', compact('updcourse'));
     }
 
     /**
