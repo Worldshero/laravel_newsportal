@@ -1,14 +1,9 @@
 @extends('Admin.layout.master')
 @section('content')
-<div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-</div>
-
-                            {{-- <div class="container">
-                                    <a  onclick="return confirm('You want to create new Post ? ')" href="http://127.0.0.1:8000/course/create" class="btn btn-info" >
-                                      <i class="fas fa-plus"></i> create</a> </div> --}}
-
-                             <table class="table table-striped responsive">
+                    <div id="content-header">
+                       <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+                        </div>
+                            <table class="table table-striped responsive">
                                  <thead >
                                         <tr><th scope="col" style="width: 3%"><h5> S.No. </h5></th>
                                         <th scope="col" style="width: 10%"><h5>Course</h5></th>
@@ -48,8 +43,8 @@
                                              @endforeach
                                          </tbody>
                                    </table>
-
-                             @endsection
+                                   <div class=" col-md-5 offset-5">   <?php echo $courses->render(); ?></div>
+                                   @endsection
                               @section('javascript')
                             {{-- <script src="{{ asset('/js/custom.js') }}"></script> --}}
                               {{-- <script src="{{ asset('/js/login.js') }}"></script> --}}
@@ -99,3 +94,4 @@
                                 }
                             </script>
                          @endsection
+

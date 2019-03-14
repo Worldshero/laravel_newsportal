@@ -22,7 +22,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = DB::table('courses')->get();
+        $courses = DB::table('courses')->paginate(10);
 
         return view('Admin.course.homecourse')->with('courses', $courses);
 

@@ -11,11 +11,11 @@ Route::get('/', function () {
 Route::group(['middleware'=>['User:web']],function (){
     Route::resource('course/detailvalue', 'CoursedetailController');
     Route::resource('course','CourseController');
-    Route::get('dashboard', function () {
-        return view('Admin.layout.dashboard');
-    });
+   // Route::get('dashboard', function () {
+       // return view('Admin.layout.dashboard');
+  //  });
 });
-Route::get('check', 'DashboardController@BarGraph');
+Route::get('dashboard', 'DashboardController@BarGraph');
 
 Route::resource('frontend','FrontendController');
 

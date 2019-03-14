@@ -17,7 +17,7 @@ class CoursedetailController extends Controller
     public function index()
     {
         // $crsval= DB::table('courses')->pluck('id', 'Category');
-        $courses=DB::table('details')->get();
+        $courses=DB::table('details')->paginate(10);
         return view('Admin.Coursedetail.HomeDetailValue')->with('courses',$courses);
         //->with('crsval',$crsval );
     }

@@ -12,26 +12,24 @@ class DashboardController extends Controller
 
     public function BarGraph()
     {
+      $course= course::pluck('Category','id');
+       $courseDetails= DB::table('details')
+                 ->select('course_id', DB::raw('count(*) as total'))
+                 ->groupBy('course_id')
+                 ->get();
+               $catDetails=array();
+                 $TotleDetails=array();
+                           foreach($courseDetails as $Detail)
+                            {
+                 array_push($catDetails, $course[$Detail->course_id]) ;
+                 array_push($TotleDetails, $Detail->total) ;
+                             }
 
-    //       $courses = DB::table('details')->distinct()->get(['course_id']);
-    //       $crs = json_decode($courses, true);
+                    return view('admin.layout.dashboard',compact('catDetails','TotleDetails'));
 
-    //     // print_r( $crs);
-        $colData = DB::table('courses')->pluck('Category');
-        $crs = json_decode($colData, true);
-        return view('admin.layout.dashboard',compact('crs'));
-// print_r($crs);
-    //     $count=count($colData);
-    //   //print_r($count);
-
-
-
-
-
-
-    }
+                }
 
 
 
 
-}
+            }
