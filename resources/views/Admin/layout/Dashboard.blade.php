@@ -6,7 +6,7 @@
                  </div>
                         <!--End-breadcrumbs-->
                              <div class="container-fluid">
-                              <canvas id="bar-chart" width="600" height="100"></canvas>
+                              <canvas id="bar-chart" width="100" height="75"></canvas>
                              </div>
 @endsection
 @section('javascript')
@@ -34,25 +34,37 @@
                   function resetMenu() { document.gomenu.selector.selectedIndex = 2; }
                           // STRAT bar graph
                          new Chart(document.getElementById("bar-chart"), {
+
                          type: 'bar',
                          data: {
                             //Course Category
                          labels: courses,
                          datasets: [{
-                         label: "Details Added",
-                         backgroundColor: ["#3e95cd", "#8e5ea2","#3e95cd"],
+                         label: "Total",
+                         // backgroundColor: ['#7042EE'],
+                          backgroundColor:'#7042EE',
+
                           // Course details Count
                          data: total
                                  }
                              ]
                          },
     options: {
+
       legend: { display: false },
       title: {
         display: true,
         text: 'Category Course Added '
-      }
+      },
+      scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
     }
+
 });
     </script>
 @endsection

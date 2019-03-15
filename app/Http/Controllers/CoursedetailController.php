@@ -16,10 +16,11 @@ class CoursedetailController extends Controller
      */
     public function index()
     {
-        // $crsval= DB::table('courses')->pluck('id', 'Category');
+         $crsval= DB::table('courses')->pluck('Category', 'id');
         $courses=DB::table('details')->paginate(10);
-        return view('Admin.Coursedetail.HomeDetailValue')->with('courses',$courses);
-        //->with('crsval',$crsval );
+        return view('Admin.Coursedetail.HomeDetailValue')->with('courses',$courses)
+        ->with('crsval',$crsval );
+    //  print_r($crsval);
     }
 
     /**
@@ -102,7 +103,7 @@ class CoursedetailController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'Sub_cat' => 'required|unique:details',
+            'Sub_cat' => 'required',
             'Sub_title' => 'required',
             'course_id' => 'required',
         ]);

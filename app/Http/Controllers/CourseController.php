@@ -118,7 +118,7 @@ class CourseController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'Category' => 'required|unique:courses',
+            'Category' => 'required',
             'Cat_title' => 'required',
             'img_url' => 'required',
         ]);

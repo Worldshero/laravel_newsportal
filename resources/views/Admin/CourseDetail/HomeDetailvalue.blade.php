@@ -17,8 +17,9 @@
                               @foreach ($courses as $course)
                                  <tr><td> <b> {{$loop->index+1}} </b> </td>
                                  <td>   {{$course->Sub_cat}}</td>
-                                 <td class="text"> {{$course->Sub_title}}  </td>
-                                 <td> {{$course->course_id}} </td>
+                                 <td class="textt"> {{$course->Sub_title}}  </td>
+                                 {{-- <td> {{$course->course_id}} </td> --}}
+                             <td>{{ $crsval[$course->course_id]}}</td>
                                  <td> {{$course->created_at}}  </td>
                                  <td> {{$course->updated_at}}  </td>
                                  <td>  <div class="row">
@@ -42,29 +43,8 @@
          <div class=" col-md-5 offset-5">   <?php echo $courses->render(); ?></div>
 @endsection
 @section('javascript')
-                            {{-- <script src="{{ asset('/js/custom.js') }}"></script> --}}
-                              {{-- <script src="{{ asset('/js/login.js') }}"></script> --}}
-                              <script src="{{asset('js/excanvas.min.js')}}"></script>
-                              <script src="{{asset('js/jquery.min.js')}}"></script>
-                              <script src="{{asset('js/jquery.ui.custom.js')}}"></script>
-                              <script src="{{asset('js/bootstrap.min.js')}}"></script>
-                              <script src="{{asset('js/jquery.flot.min.js')}}"></script>
-                              <script src="{{asset('js/jquery.flot.resize.min.js')}}"></script>
-                              <script src="{{asset('js/jquery.peity.min.js')}}"></script>
-                              <script src="{{asset('js/fullcalendar.min.js')}}"></script>
-                              <script src="{{asset('js/matrix.js')}}"></script>
-                              <script src="{{asset('js/matrix.dashboard.js')}}"></script>
-                              <script src="{{asset('js/jquery.gritter.min.js')}}"></script>
-                              <script src="{{asset('js/matrix.interface.js')}}"></script>
-                              <script src="{{asset('js/matrix.chat.js')}}"></script>
-                              <script src="{{asset('js/jquery.validate.js')}}"></script>
-                              <script src="{{asset('js/jquery.wizard.js')}}"></script>
-                              <script src="{{asset('js/jquery.uniform.js')}}"></script>
-                              <script src="{{asset('js/select2.min.js')}}"></script>
-                              <script src="{{asset('js/matrix.popover.js')}}"></script>
-                              <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
-                              <script src="{{asset('js/matrix.tables.js')}}"></script>
-                              <script src="{{asset('js/matrix.form_validation.js')}}"></script>
+                                        <script src="{{asset('js/jquery.min.js')}}"></script>
+                                       <script src="{{asset('js/matrix.js')}}"></script>
                               <script type="text/javascript">
                                 // This function is called from the pop-up menus to transfer to
                                 // a different page. Ignore if the value returned is a null string:
