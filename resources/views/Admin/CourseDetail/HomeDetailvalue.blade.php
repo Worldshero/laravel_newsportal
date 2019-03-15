@@ -1,8 +1,7 @@
 @extends('Admin.layout.master')
+
 @section('content')
-        <div id="content-header">
-             <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-                </div>
+
                 <table class="table table-bordered">
                   <thead >
                     <tr><th scope="col" style="width: 5%"><h5> S.No. </h5></th>
@@ -41,6 +40,7 @@
                    </tbody>
              </table>
          <div class=" col-md-5 offset-5">   <?php echo $courses->render(); ?></div>
+
 @endsection
 @section('javascript')
                                         <script src="{{asset('js/jquery.min.js')}}"></script>

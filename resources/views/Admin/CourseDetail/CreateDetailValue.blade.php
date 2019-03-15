@@ -11,9 +11,7 @@
       </ul>
   </div>
 @endif
-<div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-</div>
+
 
         <div class="col-md-8 offset-md-2">
 
@@ -38,10 +36,6 @@
                   </form>
         </div>
 
-
-
-
-]
 @endsection
 @section('javascript')
                              <script src="{{asset('js/jquery.min.js')}}"></script>

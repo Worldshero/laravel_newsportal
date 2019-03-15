@@ -1,16 +1,22 @@
 @extends('Admin.layout.master')
 @section('content')
                       <!--breadcrumbs-->
-                 <div id="content-header">
-                  <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-                 </div>
+
                         <!--End-breadcrumbs-->
-                             <div class="container-fluid">
+                        <div class="container">
+                        <div class="row">
+                             <div class="col-md-6 ">
                               <canvas id="bar-chart" width="100" height="75"></canvas>
-                             </div>
+                            </div>
+                              <div class="col-md-6">
+                                    {{ date('Y-m-d H:i:s') }}
+
+                              </div>
+                             </div></div>
 @endsection
 @section('javascript')
              <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
              <script src="{{asset('js/jquery.min.js')}}"></script>
              <script src="{{asset('js/matrix.js')}}"></script>
              <script type="text/javascript">

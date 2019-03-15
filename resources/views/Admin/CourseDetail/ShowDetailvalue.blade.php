@@ -1,8 +1,6 @@
 @extends('Admin.layout.master')
 @section('content')
-               <div id="content-header">
-                <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-             </div>
+
                  <div class="jumbotron">
                          <div class=""><h3>{{$showdetail->Sub_cat}} </h3></div>
                         <div class=" "><p>{{$showdetail->Sub_title}}</p></div>
