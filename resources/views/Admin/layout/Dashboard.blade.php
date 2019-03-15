@@ -1,16 +1,22 @@
 @extends('Admin.layout.master')
 @section('content')
                       <!--breadcrumbs-->
-                 <div id="content-header">
-                  <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-                 </div>
+
                         <!--End-breadcrumbs-->
-                             <div class="container-fluid">
-                              <canvas id="bar-chart" width="600" height="100"></canvas>
-                             </div>
+                        <div class="container">
+                        <div class="row">
+                             <div class="col-md-6 ">
+                              <canvas id="bar-chart" width="100" height="75"></canvas>
+                            </div>
+                              <div class="col-md-6">
+                                    {{ date('Y-m-d H:i:s') }}
+
+                              </div>
+                             </div></div>
 @endsection
 @section('javascript')
              <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
              <script src="{{asset('js/jquery.min.js')}}"></script>
              <script src="{{asset('js/matrix.js')}}"></script>
              <script type="text/javascript">
@@ -34,25 +40,37 @@
                   function resetMenu() { document.gomenu.selector.selectedIndex = 2; }
                           // STRAT bar graph
                          new Chart(document.getElementById("bar-chart"), {
+
                          type: 'bar',
                          data: {
                             //Course Category
                          labels: courses,
                          datasets: [{
-                         label: "Details Added",
-                         backgroundColor: ["#3e95cd", "#8e5ea2","#3e95cd"],
+                         label: "Total",
+                         // backgroundColor: ['#7042EE'],
+                          backgroundColor:'#7042EE',
+
                           // Course details Count
                          data: total
                                  }
                              ]
                          },
     options: {
+
       legend: { display: false },
       title: {
         display: true,
         text: 'Category Course Added '
-      }
+      },
+      scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
     }
+
 });
     </script>
 @endsection

@@ -20,18 +20,18 @@
               <link href="{{asset('font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
               <link rel="stylesheet" href="{{asset('css/jquery.gritter.css')}}" />
               <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-              {{-- <link rel="stylesheet" href="{{ asset('/css/custom.css') }}"> --}}
-              {{-- <link rel="stylesheet" href="{{ asset('/css/login.css') }}"> --}}
+              <link rel="stylesheet" href="{{ asset('css/custom.css') }}" />
             </head>
                  <body>
                      @include('Admin.layout.header')
                      @include('Admin.layout.nav')
                         <!--main-container-part-->
-                     <div id="content">
+                     <div id="content" style=" margin-top: px;">
                      @yield('content')
                      </div>
                      {{-- footer --}}
                      @include('Admin.layout.footer')
                      @yield('javascript')
+                     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
                 </body>
          </html>

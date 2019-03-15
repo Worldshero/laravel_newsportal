@@ -55,3 +55,22 @@
 
 
 
+{{-- navvvvvvv------------------------------------------------------------- --}}
+
+
+<nav class="navbar navbar-expand navbar-light fixed-top" style="background-color:#2E363F;">
+        <p>My Brand</p>
+          <ul class=" nav navbar-nav">
+              <li class="dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                      Welcome,<P> {{ Auth::user()->Name }}</P>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+              </li>
+          </ul>
+      </nav>

@@ -1,43 +1,14 @@
 @extends('Admin.layout.master')
 @section('content')
 
-{{-- <div class="container" style="margin-top:80px">
-             a class="btn btn-info" href="http://127.0.0.1:8000/course/detailvalue"> <i class="fas fa-directions fa-5"></i> Go Back</a>
-               </div> --}}
-               <div id="content-header">
-                <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-            </div>
-
-                         <div class="col-md-12 offset-md-2"><h3>{{$showdetail->Sub_cat}} </h3></div>
-                        <div class="col-md-12 offset-md-2">{{$showdetail->Sub_title}}</div>
-
-
-
+                 <div class="jumbotron">
+                         <div class=""><h3>{{$showdetail->Sub_cat}} </h3></div>
+                        <div class=" "><p>{{$showdetail->Sub_title}}</p></div>
+                 </div>
              @endsection
              @section('javascript')
-             {{-- <script src="{{ asset('/js/custom.js') }}"></script> --}}
-               {{-- <script src="{{ asset('/js/login.js') }}"></script> --}}
-               <script src="{{asset('js/excanvas.min.js')}}"></script>
-               <script src="{{asset('js/jquery.min.js')}}"></script>
-               <script src="{{asset('js/jquery.ui.custom.js')}}"></script>
-               <script src="{{asset('js/bootstrap.min.js')}}"></script>
-               <script src="{{asset('js/jquery.flot.min.js')}}"></script>
-               <script src="{{asset('js/jquery.flot.resize.min.js')}}"></script>
-               <script src="{{asset('js/jquery.peity.min.js')}}"></script>
-               <script src="{{asset('js/fullcalendar.min.js')}}"></script>
-               <script src="{{asset('js/matrix.js')}}"></script>
-               <script src="{{asset('js/matrix.dashboard.js')}}"></script>
-               <script src="{{asset('js/jquery.gritter.min.js')}}"></script>
-               <script src="{{asset('js/matrix.interface.js')}}"></script>
-               <script src="{{asset('js/matrix.chat.js')}}"></script>
-               <script src="{{asset('js/jquery.validate.js')}}"></script>
-               <script src="{{asset('js/jquery.wizard.js')}}"></script>
-               <script src="{{asset('js/jquery.uniform.js')}}"></script>
-               <script src="{{asset('js/select2.min.js')}}"></script>
-               <script src="{{asset('js/matrix.popover.js')}}"></script>
-               <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
-               <script src="{{asset('js/matrix.tables.js')}}"></script>
-               <script src="{{asset('js/matrix.form_validation.js')}}"></script>
+             <script src="{{asset('js/jquery.min.js')}}"></script>
+             <script src="{{asset('js/matrix.js')}}"></script>
                <script type="text/javascript">
                  // This function is called from the pop-up menus to transfer to
                  // a different page. Ignore if the value returned is a null string:

@@ -2,7 +2,7 @@
      <div class="container" style="margin-top:50px">
          <div>
               @include('newsportal.nav')
-                         </div>                       
+                         </div>
                                 <div id="demo" class="carousel slide" data-ride="carousel"  >
                                     <ul class="carousel-indicators">
                                       <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -15,21 +15,21 @@
                                         <div class="carousel-caption">
                                           <h3>Coder Kidies</h3>
                                           <p>We had such a great time in LA!</p>
-                                        </div>   
+                                        </div>
                                       </div>
                                       <div class="carousel-item">
                                         <img src="storage/img/001.jpg" alt="Chicago" width="1100" height="500">
                                         <div class="carousel-caption">
                                           <h3>Java</h3>
                                           <p>Thank you, Coder!</p>
-                                        </div>   
+                                        </div>
                                       </div>
                                       <div class="carousel-item">
                                         <img src="storage/img/003.jpg" alt="New York" width="1100" height="500">
                                         <div class="carousel-caption">
                                           <h3>Programmer place</h3>
                                           <p>Learn programmin !</p>
-                                        </div>   
+                                        </div>
                                       </div>
                                     </div>
                                     <a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -42,10 +42,10 @@
                                   <br>
                                   <div class="container">
                                     <div class="row">
-                                        @foreach ($courses as $course)  
+                                        @foreach ($courses as $course)
                                       <div class='col-md-4 col-sm-6'>
-                                        <div class="card" style="width: 18rem;">
-                                        <img   class="card-img-top" src="storage/img/{{$course->img_url}}" alt="Card image cap">
+                                        <div class="card" style="width: 15rem;">
+                                        <img style=""  class="card-img-top thumbnail rounded-circle" src="storage/img/{{$course->img_url}}" alt="Card image cap">
                                           <div class="card-body">
                                             <h5 class="card-title">{{$course->Category}}</h5>
                                             <p class="card-text">{{$course->Cat_title}}</p>
@@ -54,10 +54,10 @@
                                         </div>
                                     </div>
                                         @endforeach
-                                          </div> 
+                                          </div>
                                            </div>
-                                        </div>  
-                                                   
+                                        </div>
+
           @include('newsportal.footer')
 
 
@@ -65,19 +65,19 @@
 
 
 
-   
-
-                
-   
-    
-
-
-        
-                
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
 
 
 

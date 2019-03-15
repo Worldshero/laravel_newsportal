@@ -1,5 +1,5 @@
 <!--sidebar-menu-->
-<div id="sidebar"><a href="{{url('/')}}" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+<div   id="sidebar"><a href="{{url('/')}}" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
     <ul>
         <li ><a href="http://127.0.0.1:8000/dashboard"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
         <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Categories</span></a>
