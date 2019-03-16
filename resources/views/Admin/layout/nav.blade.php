@@ -17,7 +17,4 @@
 
     </ul>
 </div>
-<!--sidebar-menu-->
- {{-- <div class="container">
- <a  onclick="return confirm('You want to create new Post ? ')" href="http://127.0.0.1:8000/course/create" class="btn btn-info" >
-                                      <i class="fas fa-plus"></i> create</a> </div> --}}
+

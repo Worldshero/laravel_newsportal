@@ -8,8 +8,8 @@
                              <div class="col-md-6 ">
                               <canvas id="bar-chart" width="100" height="75"></canvas>
                             </div>
-                              <div class="col-md-6">
-                                    {{ date('Y-m-d H:i:s') }}
+                              <div  class="col-md-6">
+                                 <h3 id="tdiv"> Current Time <br> {{ date('Y-m-d H:i:s') }} </h3>
 
                               </div>
                              </div></div>
@@ -72,5 +72,34 @@
     }
 
 });
+
+
+// for auto refresh  div
+var counter = 5;
+
+// The countdown method.
+window.setInterval(function () {
+    counter--;
+    if (counter >= 0) {
+        var span;
+        span = document.getElementById("tdiv");
+        span.innerHTML = counter;
+    }
+    if (counter === 0) {
+        clearInterval(counter);
+    }
+
+}, 1000);
+
+window.setInterval('refresh()', 10000);
+
+// Refresh or reload page.
+function refresh() {
+    window  .location.reload();
+}
+
+
     </script>
+
+
 @endsection
