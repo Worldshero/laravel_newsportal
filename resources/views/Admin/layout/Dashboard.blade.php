@@ -1,15 +1,28 @@
 @extends('Admin.layout.master')
 @section('content')
-                      <!--breadcrumbs-->
 
-                        <!--End-breadcrumbs-->
+
+
+<div class="container-fluid">
+        <div class="quick-actions_homepage">
+            <ul class="quick-actions">
+                <li class="bg_lb"> <a href="http://127.0.0.1:8000/course"> <i class="icon-ok"></i> <span class="label label-important">{{$courseCount}}</span>Total Courses</a> </li>
+                <li class="bg_ly"> <a href="http://127.0.0.1:8000/course/detailvalue"> <i class="icon-th-large"></i><span class="label label-success">{{$DetailCount}}</span> Total Course Details </a> </li>
+                <li class="bg_lo span3"> <a href="#"> <i class="icon-star-empty"><span class="label label-important"></span></i>Top Rated Courses</a> </li>
+
+                <li class="bg_ls"> <a href="#"> <i class="icon-user"></i> <span class="label label-success">{{ $userCount}}</span>Total Registered User</a> </li>
+
+            </ul>
+        </div>
+    </div>
+
                         <div class="container">
                         <div class="row">
                              <div class="col-md-6 ">
                               <canvas id="bar-chart" width="100" height="75"></canvas>
                             </div>
                               <div  class="col-md-6">
-                                 <h3 id="tdiv"> Current Time <br> {{ date('Y-m-d H:i:s') }} </h3>
+                                 <h3 id=""> Current Time <br> {{ date('Y-m-d H:i:s') }} </h3>
 
                               </div>
                              </div></div>
@@ -75,28 +88,31 @@
 
 
 // for auto refresh  div
-var counter = 5;
+// var counter = 5;
 
-// The countdown method.
-window.setInterval(function () {
-    counter--;
-    if (counter >= 0) {
-        var span;
-        span = document.getElementById("tdiv");
-        span.innerHTML = counter;
-    }
-    if (counter === 0) {
-        clearInterval(counter);
-    }
+// // The countdown method.
+// window.setInterval(function () {
+//     counter--;
+//     if (counter >= 0) {
+//         var span;
+//         span = document.getElementById("tdiv");
+//         span.innerHTML = counter;
+//     }
+//     if (counter === 0) {
+//         clearInterval(counter);
+//     }
 
-}, 1000);
+// }, 1000);
 
-window.setInterval('refresh()', 10000);
+//window.setInterval('refresh()', 10000);
 
 // Refresh or reload page.
-function refresh() {
-    window  .location.reload();
-}
+// function refresh() {
+//     window  .location.reload();
+// }
+
+
+
 
 
     </script>
