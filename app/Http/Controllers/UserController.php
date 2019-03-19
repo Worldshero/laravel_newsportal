@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-class AdminController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,26 +13,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-       return view('Admin.login_register');
+    return view('admin.profile');
     }
-
-    public function register(Request $request){
-        $this->validate($request,[
-           'name'=>'required|string|max:255',
-            'email'=>'required|string|email|unique:users,email',
-            'password'=>'required|min:6|confirmed',
-        ]);
-
-
-        $input_data=$request->all();
-        $input_data['password']=Hash::make($input_data['password']);
-        User::create($input_data);
-        return back()->with('message','Registration Done!');
-
-
-        }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -63,7 +45,9 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $showUser= User::find($id);
+       // return view('admin.layout.header')->with('showUser',$showUser);
+      //  print_r($showUser);
     }
 
     /**
