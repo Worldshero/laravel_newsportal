@@ -6,12 +6,20 @@ use Illuminate\Http\Request;
 use App\Coursedetail;
 use DB;
 use App\course;
+use App\User;
 class DashboardController extends Controller
 {
     //Write your function Here
 
     public function BarGraph()
     {
+
+        $userCount = DB::table('users')
+        ->count();
+        $courseCount=DB::table('courses')->count();
+        $DetailCount=DB::table('details')->count();
+
+
       $course= course::pluck('Category','id');
        $courseDetails= DB::table('details')
                  ->select('course_id', DB::raw('count(*) as total'))
@@ -25,9 +33,11 @@ class DashboardController extends Controller
                  array_push($TotleDetails, $Detail->total) ;
                              }
 
-                    return view('admin.layout.dashboard',compact('catDetails','TotleDetails'));
+                    return view('admin.layout.dashboard',compact('catDetails','TotleDetails','userCount','courseCount','DetailCount'));
 
                 }
+
+
 
 
 

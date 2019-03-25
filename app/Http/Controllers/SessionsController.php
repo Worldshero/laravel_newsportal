@@ -31,7 +31,11 @@ class SessionsController extends Controller
         return redirect()->to('/login')->with('message','you are Logout!');
     }
 
+    public function show($id)
+    {
 
+    return view('');
+    }
 
 
 
