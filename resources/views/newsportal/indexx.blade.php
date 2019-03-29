@@ -40,8 +40,38 @@
                                     </a>
                                   </div>
                                   <br>
-                                  <div class="container">
                                     <div class="row">
+                                       <div class="col-md-2">
+                                            <div class="table-responsive d-none d-xl-block">
+                                                    <table class="table  ">
+                                                     <tr>   <th>HTML5 Tutorial</th> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr>   <th>HTML5 Tutorial</th> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr>   <th>HTML5 Tutorial</th> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                     <tr><td>HTML Introduction</td> </tr>
+                                                </table>
+
+
+
+
+
+                                            </div>
+                                    </div>
+                                       <div class="col-md-9">
+                                           <div class="row">
                                         @foreach ($courses as $course)
                                       <div class='col-md-4 col-sm-6'>
                                         <div class="card" style="width: 15rem;">
@@ -54,9 +84,11 @@
                                         </div>
                                     </div>
                                         @endforeach
+                                           </div>
+                                    </div>
                                           </div>
                                            </div>
-                                        </div>
+                                           <div class=" col-md-5 offset-5">   <?php echo $courses->render(); ?></div>
 
           @include('newsportal.footer')
 

@@ -1,47 +1,27 @@
+/* for dropdown in index page */
 
-                        .dropbtn {
-                          background-color: #66a3ff;
-                          color: white;
-                          padding: 10px;
-                          font-size: 16px;
-                          border: none;}
-                         .dropdown {
-                            position: relative;
-                            display: inline-block;}
-                          .dropdown-content {
-                            display: none;
-                            position: absolute;
-                            background-color: #f1f1f1;
-                            min-width: 160px;
-                            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                            z-index: 1;}
-                          .dropdown-content a {
-                            color: black;
-                            padding: 12px 16px;
-                            text-decoration: none;
-                            display: block;}
-                          .dropdown-content a:hover {background-color: #ddd;}
-                          .dropdown:hover .dropdown-content {display: block;}
-                          .dropdown:hover .dropbtn {background-color:  #66a3ff;}
+                @media screen and (min-width: 768px) {
 
-                            /* end CSS for Dropdown table nav button */
-                            /* navbar background font size */
-                          .bgc {
-                             background-color: #e6f0ff;
-                             color: white;
-                             padding: 5px;
-                             font-size: 10px;
-                             border: none;
-                             text-align:0; }
-                          a:hover { background-color:  #66a3ff;}
-                           /* social logo style */
-                          .scs {
-                             background-color: #66a3ff;
-                              color: white;
-                              padding: 8px;
-                              font-size: 16px;
-                              border: none;
-                              text-align: 0;}
+
+
+                    .megamenu > .dropdown-menu {
+                       left:-90%;
+                       min-width:800px;
+                    }
+
+                  }
+
+                  .dropdown-md > .dropdown-menu {
+                      min-width:450px;
+                  }
+
+                  .dropdown-lg > .dropdown-menu {
+                      min-width:850px;
+                  }
+
+
+                            /* visible for device */
+
                            /* for overflow text */
                          .textt {
                             display: block;

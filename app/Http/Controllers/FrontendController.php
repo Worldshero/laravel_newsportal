@@ -16,7 +16,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        $courses=DB::table('courses')->get();
+        $courses=DB::table('courses')->paginate(6);
         return view ('newsportal.indexx')->with('courses',$courses);
 
     }
