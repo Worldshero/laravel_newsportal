@@ -22,3 +22,7 @@ Route::get('detail/{id}', 'ApiController@CourseDetails');
 //For course category
 Route::get('course/{id}', 'ApiController@ShowCourse');
 Route::post('course','ApiController@CreateCourse');
+
+//for user register loginWithDetails
+Route::post('user','userapiController@CreateUser');
+Route::post('user','userapiController@loginWithDetails');

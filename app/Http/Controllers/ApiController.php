@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
-
 use Validator;
 //use Illuminate\Support\Facades\Request;
  //use Request;
@@ -28,14 +25,14 @@ class ApiController extends Controller
   }
 
 //for course category
-
+//show course details
   public function ShowCourse($id)
   {
     $course=Course::find($id);
     return response()->json($course);
   }
 
-
+//create course details
 public function CreateCourse(){
 
   $authKey = $this->request->header('Authorization');
@@ -88,14 +85,6 @@ public function CreateCourse(){
 }else{
     return response(array("message" => "Invalid Access"),401);
 }
-
-
-
-
-
-
-
-
 
 
 }
