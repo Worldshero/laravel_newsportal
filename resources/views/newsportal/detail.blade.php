@@ -14,7 +14,7 @@
                                                if ($j==0 ){$backbtn=$item;} @endphp
                                             @php
                                                if ($i==0 ){$xyz=$item;} @endphp
-                                                    <li class="list-group-item"  > <a  data-id="{{$item->id}}"   class="CourseDetails">{{$item->Sub_cat}}</a></li>
+                                                    <li class="list-group-item"  > <a href="#" data-id="{{$item->id}}"   class="CourseDetails">{{$item->Sub_cat}}</a></li>
                                                     <input type="hidden" id="detailsid" value="{{$item->id}}" />
                                                 @php
                                                      $i++;

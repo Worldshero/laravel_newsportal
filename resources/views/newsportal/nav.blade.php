@@ -19,63 +19,62 @@
                             <a href="#" class="dropdown-toggle nav-link active" data-toggle="dropdown">Courses<span class="caret"></span></a>
                              <div class="dropdown-menu">
                                 <div class="row">
-                                    <div class="col-md-6">   <div class="list-group">
-                                            <a href="#" class="list-group-item list-group-item-action active">
-                                              Cras justo odio
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus
-                                            </a>
-                                          </div>                 </div>
-                                    <div class="col-md-6">
-                                            <ul class="list-group">
-                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                      Cras justo odio
-                                                      <span class="badge badge-primary badge-pill">14</span>
-                                                    </li>
-                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                      Dapibus ac facilisis in
-                                                      <span class="badge badge-primary badge-pill">2</span>
-                                                    </li>
-                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                      Morbi leo risus
-                                                      <span class="badge badge-primary badge-pill">1</span>
-                                                    </li>
-                                                  </ul>
+                                    <div class="col-md-4 col-sm-4">
+                                   <ul class="list-inline" style="margin-left:15px">
+                                       <li>Html</li>
+                                       <li>html-Overview</li>
+                                       <li>html-Overview</li>
+                                       <li>html-Overview</li>
+                                       <li>html-Overview</li>
+                                   </ul>
                                     </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="list-inline" >
+                                            <li>Html</li>
+                                            <li>html-Overview</li>
+                                            <li>html-Overview</li>
+                                            <li>html-Overview</li>
+                                            <li>html-Overview</li>
+                                        </ul>
+                                         </div>
+                                         <div class="col-md-4 col-sm-4">
+                                            <ul class="list-inline" >
+                                                <li>Html</li>
+                                                <li>html-Overview</li>
+                                                <li>html-Overview</li>
+                                                <li>html-Overview</li>
+                                                <li>html-Overview</li>
+                                            </ul>
+                                             </div>
                                 </div>
                                 <div class="row">
-                                        <div class="col-md-6">   <ul class="list-group">
-                                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                  Cras justo odio
-                                                  <span class="badge badge-primary badge-pill">14</span>
-                                                </li>
-                                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                  Dapibus ac facilisis in
-                                                  <span class="badge badge-primary badge-pill">2</span>
-                                                </li>
-                                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                  Morbi leo risus
-                                                  <span class="badge badge-primary badge-pill">1</span>
-                                                </li>
-                                              </ul>                  </div>
-                                        <div class="col-md-6">
-                                                <ul class="list-group">
-                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                          Cras justo odio
-                                                          <span class="badge badge-primary badge-pill">14</span>
-                                                        </li>
-                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                          Dapibus ac facilisis in
-                                                          <span class="badge badge-primary badge-pill">2</span>
-                                                        </li>
-                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                          Morbi leo risus
-                                                          <span class="badge badge-primary badge-pill">1</span>
-                                                        </li>
-                                                      </ul>
-                                        </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <ul class="list-inline"  style="margin-left:15px">
+                                            <li>Html</li>
+                                            <li>html-Overview</li>
+                                            <li>html-Overview</li>
+                                            <li>html-Overview</li>
+                                            <li>html-Overview</li>
+                                        </ul>
+                                         </div>
+                                         <div class="col-md-4 col-sm-6">
+                                            <ul class="list-inline" >
+                                                <li>Html</li>
+                                                <li>html-Overview</li>
+                                                <li>html-Overview</li>
+                                                <li>html-Overview</li>
+                                                <li>html-Overview</li>
+                                            </ul>
+                                             </div>
+                                             <div class="col-md-4 col-sm-6 ">
+                                                <ul class="list-inline" >
+                                                    <li>Html</li>
+                                                    <li>html-Overview</li>
+                                                    <li>html-Overview</li>
+                                                    <li>html-Overview</li>
+                                                    <li>html-Overview</li>
+                                                </ul>
+                                                 </div>
                                     </div>
                              </div>
                        </li>
